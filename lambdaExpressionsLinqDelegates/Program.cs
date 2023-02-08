@@ -1,6 +1,5 @@
-﻿/*Problema exemplo
-Fazer um programa que, a partir de uma lista de produtos, remova da
-lista somente aqueles cujo preço mínimo seja 100.*/
+﻿/*Fazer um programa que, a partir de uma lista de produtos, aumente o
+preço dos produtos em 10%..*/
 
 using lambdaExpressionsLinqDelegates.Entities;
 
@@ -15,11 +14,16 @@ internal class Program
         list.Add(new Product("Tablet", 350.50));
         list.Add(new Product("HD Case", 80.90));
 
-        list.RemoveAll(ProducTest);
-        foreach (Product p in list)
+        list.ForEach(UpdatePrice);
+        foreach(Product p in list)
         {
             Console.WriteLine(p);
         }
+
+
     }
-    public static bool ProducTest(Product p) { return p.Price >= 100.0; }
+    static void UpdatePrice(Product p)
+    {
+        p.Price += p.Price * 0.1;
+    }
 }
