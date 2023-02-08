@@ -1,5 +1,5 @@
 ﻿using lambdaExpressionsLinqDelegates.Entities;
-
+using lambdaExpressionsLinqDelegates.Services;
 List<Product> list = new List<Product>();
 
 list.Add(new Product("TV", 900.00));
@@ -15,3 +15,16 @@ foreach(Product p in list)
     Console.WriteLine(p);
 }
 
+
+
+Console.WriteLine();
+double a = 10;
+double b = 12;
+
+//double result = CalculationService.Square(a);
+Console.WriteLine("Delegate: ");
+
+//delegate:
+BinaryNumericOperation op = CalculationService.Sum;
+double result = op(a, b);
+Console.WriteLine(result);
