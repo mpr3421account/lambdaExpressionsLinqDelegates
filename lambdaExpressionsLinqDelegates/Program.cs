@@ -25,6 +25,10 @@ internal class Program
         {
             Console.WriteLine(x);
         }
+
+        Console.WriteLine("Operações do LINQ:");
+
+        Console.WriteLine("Filtering: Where, OfType\r\n• Sorting: OrderBy, OrderByDescending,\r\nThenBy, ThenByDescending, Reverse\r\n• Set: Distinct, Except, Intersect, Union\r\n• Quantification: All, Any, Contains\r\n• Projection: Select, SelectMany\r\n• Partition: Skip, Take\r\n• Join: Join, GroupJoin\r\n• Grouping: GroupBy\r\n• Generational: Empty\r\n• Equality: SequenceEquals\r\n• Element: ElementAt, First, FirstOrDefault\r\nLast, LastOrDefault, Single, SingleOrDefault\r\n• Conversions: AsEnumerable, AsQueryable\r\n• Concatenation: Concat\r\n• Aggregation: Aggregate, Average, Count,\r\nLongCount, Max, Min, Sum");
     }
 
 }
