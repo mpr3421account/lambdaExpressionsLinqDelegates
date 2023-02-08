@@ -25,6 +25,7 @@ double b = 12;
 Console.WriteLine("Delegate: ");
 
 //delegate:
-BinaryNumericOperation op = CalculationService.Sum;
-double result = op(a, b);
-Console.WriteLine(result);
+BinaryNumericOperation op = CalculationService.ShowSum;
+op += CalculationService.ShowMax;
+op(a, b);
+Console.WriteLine(op);
