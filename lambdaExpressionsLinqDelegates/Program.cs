@@ -13,11 +13,11 @@ internal class Program
 
 
         // Define the query expression.
-        var result = numbers.Where(x => x % 2 == 0).Select(x => x * 10);
+        //var result = numbers.Where(x => x % 2 == 0).Select(x => x * 10);
 
-        /*IEnumerable<int> result = numbers
+        IEnumerable<int> result = numbers
         .Where(x => x % 2 == 0)
-        .Select(x => 10 * x);*/
+        .Select(x => 10 * x);
 
 
         // Execute the query.
