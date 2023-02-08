@@ -16,16 +16,16 @@ internal class Program
         list.Add(new Product("HD Case", 80.90));
 
 
-        Func<Product, string> func = NameUpper;//utilizando delegate com Func recebendo Product e retornando string - Recebendo a referência NameUpper
+        Func<Product, string> func = p => p.Name.ToUpper();
 
-        List<string> result = list.Select(func).ToList();//alterado o parâmetro para func no Select
+        List<string> result = list.Select(func).ToList();
         foreach (string s in result)
         {
             Console.WriteLine(s);
         }
     }
-    static string NameUpper(Product p)
+    /*static string NameUpper(Product p)
     {
         return p.Name.ToUpper();
-    }
+    }*/
 }
