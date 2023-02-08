@@ -15,7 +15,10 @@ internal class Program
         list.Add(new Product("Tablet", 350.50));
         list.Add(new Product("HD Case", 80.90));
 
-        List<string> result = list.Select(NameUpper).ToList();
+
+        Func<Product, string> func = NameUpper;//utilizando delegate com Func recebendo Product e retornando string - Recebendo a referência NameUpper
+
+        List<string> result = list.Select(func).ToList();//alterado o parâmetro para func no Select
         foreach (string s in result)
         {
             Console.WriteLine(s);
