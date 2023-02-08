@@ -8,24 +8,23 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<Product> list = new List<Product>();
-
-        list.Add(new Product("Tv", 900.00));
-        list.Add(new Product("Mouse", 50.00));
-        list.Add(new Product("Tablet", 350.50));
-        list.Add(new Product("HD Case", 80.90));
+        // Specify the data source.
+        int[] numbers = new int[] { 2, 3, 4, 5 };
 
 
-        /*Func<Product, string> func = p => p.Name.ToUpper();//expressão lambda sem chaves, porque a função a que ela referencia, já possui return*/
+        // Define the query expression.
+        var result = numbers.Where(x => x % 2 == 0).Select(x => x * 10);
 
-        List<string> result = list.Select(p => p.Name.ToUpper()).ToList();
-        foreach (string s in result)
+        /*IEnumerable<int> result = numbers
+        .Where(x => x % 2 == 0)
+        .Select(x => 10 * x);*/
+
+
+        // Execute the query.
+        foreach (int x in result)
         {
-            Console.WriteLine(s);
+            Console.WriteLine(x);
         }
     }
-    /*static string NameUpper(Product p)
-    {
-        return p.Name.ToUpper();
-    }*/
+
 }
