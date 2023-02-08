@@ -14,7 +14,9 @@ internal class Program
         list.Add(new Product("Tablet", 350.50));
         list.Add(new Product("HD Case", 80.90));
 
-        list.ForEach(UpdatePrice);
+        Action<Product> act = p => { p.Price += p.Price * 0.1; };
+
+        list.ForEach(act);
         foreach(Product p in list)
         {
             Console.WriteLine(p);
